@@ -1,11 +1,26 @@
 <div class="container">
-<ul>
-    {{!-- creates list item for each object in articles array --}}
-    {{#each articles}}
-    <li class="row">
-        <a href={{link}}><img src={{imageUrl}}></a><a href={{link}}>{{title}}</a>
-        <p>{{summary}}</p>
-    </li>
-    {{/each}}
-</ul>
+    <ul>
+        <div class="row">
+            {{!-- creates list item for each object in articles array --}}
+            {{#each articles}}
+            <li class="col-6" style="list-style: none">
+                <div class="card" style="width: 20rem; margin-top: 2rem">
+                    <a href={{link}}>
+                        <img class="card-img-top" src={{imageUrl}}>
+                    </a>
+                    <div class="card-body">
+                        <a href={{link}} style="color: black">
+                            <h5 class="card-title">
+                                {{title}}
+                            </h5>
+                        </a>
+                        <p class="card-text">
+                            {{summary}}
+                        </p>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </div>
+    </ul>
 </div>
