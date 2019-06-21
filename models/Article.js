@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 //use Schema constructor from mongoose to create an Article object template
-const ArticleSchema = new mongoose.Schema ({
+const ArticleSchema = new Schema ({
     title: {
         type: String,
         required: true

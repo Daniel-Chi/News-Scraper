@@ -1,0 +1,11 @@
+<div class="container">
+<ul>
+    {{!-- creates list item for each object in articles array --}}
+    {{#each articles}}
+    <li class="row">
+        <a href={{link}}><img src={{imageUrl}}></a><a href={{link}}>{{title}}</a>
+        <p>{{summary}}</p>
+    </li>
+    {{/each}}
+</ul>
+</div>

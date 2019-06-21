@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 //use Schema constructor from mongoose to create an Comment object template
-const CommentSchema = new mongoose.Schema ({
+const CommentSchema = new Schema ({
     body: {
         type: String,
         required: true
