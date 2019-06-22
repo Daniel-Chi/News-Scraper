@@ -1,4 +1,14 @@
 <div class="container">
+    <form action="/scrape/" method="GET">
+        <button type="submit" class="btn btn-primary" style="display: block; margin-left:auto; margin-right:auto">
+            Scrape Articles
+        </button>
+    </form>
+    <form action="/clear/" method="POST">
+        <button type="submit" class="btn btn-danger" style="display: block; margin-left:auto; margin-right:auto">
+            Clear Articles
+        </button>
+    </form>
     <ul>
         <div class="row">
             {{!-- creates list item for each object in articles array --}}
@@ -17,6 +27,12 @@
                         <p class="card-text">
                             {{summary}}
                         </p>
+                        <form action="/articles/{{_id}}/" method="GET">
+                            <input style="padding: 4px; margin-bottom: 1rem" type="text" placeholder="Comment"
+                                name="body">
+                            <button type="submit" class="btn btn-primary">See Comments</button>
+                            <button type="submit" class="btn btn-primary" formmethod="POST">Submit</button>
+                        </form>
                     </div>
                 </div>
             </li>

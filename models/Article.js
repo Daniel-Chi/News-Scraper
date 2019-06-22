@@ -18,10 +18,10 @@ const ArticleSchema = new Schema ({
         type: String
     },
     //store associated Comment Ids in order to get associated comments later
-    commentId: {
+    commentId: [{
         type: Schema.Types.ObjectId,
         ref: "Comment"
-    }
+    }]
 });
 
 //use mongoose model method to create the model based on the above template

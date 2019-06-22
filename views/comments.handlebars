@@ -1,0 +1,33 @@
+<div class="jumbotron">
+
+    {{!-- display title of the article with a link --}}
+    {{#each articles}}
+    <a href="{{link}}" style="color: black">
+        <h4 class="display-6">{{title}}</h4>
+    </a>
+    <hr class="my-4">
+
+    {{!-- display each comment --}}
+    {{#each commentId}}
+    <p style="margin-bottom:6px; padding:4px; display:block; background-color:whitesmoke">
+        {{this.body}}
+        {{!-- delete button --}}
+        <form action="/articles/delete/{{this._id}}/" method="POST">
+            <button name="articleId" value="{{_id}}" class="btn" type="submit" style="float: right; position:relative; bottom:3rem; font-size:1.4rem">
+                <span>
+                    <a style="color: red">
+                        <strong>x</strong>
+                    </a>
+                </span>
+            </button>
+        </form>
+    </p>
+    {{/each}}
+
+    {{!-- POST form for new comments --}}
+    <form action="/articles/{{_id}}/" method="POST">
+        <input style="padding: 4px; margin-bottom: 1rem" type="text" placeholder="Comment" name="body">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {{/each}}
+</div>
